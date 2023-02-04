@@ -1,16 +1,22 @@
+val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
+// val doobieVersion = "1.0.0-RC2"
+
 lazy val root = Project("root", file("."))
   .settings(commonSettings)
   .settings(
-    name := "Scala Starter",
+    name := "Doobie",
     libraryDependencies ++= Seq(
-      "org.typelevel" %% "cats-core" % "2.9.0",
-      "org.scalameta" %% "munit" % "0.7.29" % Test,
+      "org.tpolecat" %% "doobie-core" % doobieVersion,
+      "org.tpolecat" %% "doobie-postgres" % doobieVersion,
+      "org.postgresql" % "postgresql" % "42.5.3",
     ),
   )
 
 lazy val commonSettings = Seq(
   version := "0.1.0",
-  scalaVersion := "3.2.1",
+  scalaVersion := "<SET_THIS_SCALA_VERSION>",
+//  scalaVersion := "3.2.2",
+//  scalaVersion := "2.13.10",
   scalacOptions --= {
     if (sys.env.get("CI").isDefined) {
       Seq.empty
@@ -18,4 +24,5 @@ lazy val commonSettings = Seq(
       Seq("-Xfatal-warnings")
     }
   },
+  scalacOptions ++= Seq("-Xsource:3"),
 )

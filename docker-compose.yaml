@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: postgis/postgis:15-3.3
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: repro
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker_db_init/:/docker-entrypoint-initdb.d/
+
+  # mysql:
+  #   image: mysql:8
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: repro
+  #   ports:
+  #     - 3306:3306
+  #   volumes:
+  #     - ./docker_db_init/:/docker-entrypoint-initdb.d/
