@@ -1,5 +1,5 @@
-// val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
-val doobieVersion = "1.0.0-RC4"
+val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
+// val doobieVersion = "1.0.0-RC4"
 
 lazy val root = Project("root", file("."))
   .settings(commonSettings)
