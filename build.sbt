@@ -1,5 +1,5 @@
-val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
-// val doobieVersion = "1.0.0-RC4"
+//val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
+//val doobieVersion = "1.0.0-RC5"
 
 lazy val root = Project("root", file("."))
   .settings(commonSettings)
@@ -15,8 +15,8 @@ lazy val root = Project("root", file("."))
 lazy val commonSettings = Seq(
   version := "0.1.0",
   scalaVersion := "<SET_THIS_SCALA_VERSION>",
-//  scalaVersion := "3.3.1",
-//  scalaVersion := "2.13.12",
+//  scalaVersion := "3.4.2",
+//  scalaVersion := "2.13.14",
   scalacOptions --= {
     if (sys.env.get("CI").isDefined) {
       Seq.empty
