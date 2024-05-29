@@ -1,5 +1,6 @@
 //val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
 //val doobieVersion = "1.0.0-RC5"
+//val doobieVersion = "1.0-<COMMIT_SHORT_HASH>-SNAPSHOT"
 
 lazy val root = Project("root", file("."))
   .settings(commonSettings)
@@ -14,9 +15,9 @@ lazy val root = Project("root", file("."))
 
 lazy val commonSettings = Seq(
   version := "0.1.0",
-  scalaVersion := "<SET_THIS_SCALA_VERSION>",
-//  scalaVersion := "3.4.2",
-//  scalaVersion := "2.13.14",
+  // scalaVersion := "<SET_THIS_SCALA_VERSION>",
+  // scalaVersion := "3.4.2",
+  // scalaVersion := "2.13.14",
   scalacOptions --= {
     if (sys.env.get("CI").isDefined) {
       Seq.empty
@@ -25,4 +26,5 @@ lazy val commonSettings = Seq(
     }
   },
   scalacOptions ++= Seq("-Xsource:3"),
+  resolvers ++= Resolver.sonatypeOssRepos("snapshots"),
 )
