@@ -1,5 +1,5 @@
 //val doobieVersion = "<SET_THIS_DOOBIE_VERSION>"
-//val doobieVersion = "1.0.0-RC5"
+//val doobieVersion = "1.0.0-RC8"
 //val doobieVersion = "1.0-<COMMIT_SHORT_HASH>-SNAPSHOT"
 
 lazy val root = Project("root", file("."))
